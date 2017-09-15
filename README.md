@@ -38,4 +38,4 @@ socket.on(`movies.${listening_token}`, (data) => {
 - Implement your solution
 - Open a Pull-Request to our Repository
 
-*Any question just open a ticket for us*
+*Any question just open an issue for us*
