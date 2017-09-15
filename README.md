@@ -7,12 +7,13 @@ Sometimes I search for a movie, but I do not know the correct name and only reme
 
 
 ## Requirements
-- You use [this open and public movie API](https://sbot-fe-test.herokuapp.com/)
-- You decide which information is shown in the result list
+- You use [this public movie API](https://sbot-fe-test.herokuapp.com/)
+- You decide which information to show in the result list
 - There should be a page showing all the details for a specific movie (should be shown when the user clicks on a movie in the list)
-- You **have to use react** and can use any other library of your choice that best fits the needs for these requirements
-- You decide about the look and appearance
+- You **use react** and any other library of your choice that best fits the needs for these requirements
+- You decide  the look and appearance
 - You hand over a component (dependency) diagram
+- You can start whenever you like and send us the result once you are done.You bring the 'projcet' to a production standard (not more, not less). Do not spend more than 4 hours on this exercise.
 
 *(Optional: users want to be excited; which features, that go beyond the original scope of the challenge, can you imagine?
 If possible, pick 1 or 2 of them and implement it as well)*
@@ -32,7 +33,7 @@ socket.on(`movies.${listening_token}`, (data) => {
 ```
 
 
-## And how?
+## Send the result
 - Fork the project
 - Implement your solution
 - Open a Pull-Request to our Repository
