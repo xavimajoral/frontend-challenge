@@ -13,7 +13,7 @@ Sometimes I search for a movie, but I do not know the correct name and only reme
 - You **use react** and any other library of your choice that best fits the needs for these requirements
 - You decide  the look and appearance
 - You hand over a component (dependency) diagram
-- You can start whenever you like and send us the result once you are done.You bring the 'projcet' to a production standard (not more, not less). Do not spend more than 6 hours on this exercise.
+- You can start whenever you like and send us the result once you are done. You bring the 'project' to a production standard (not more, not less). Do not spend more than 6 hours on this exercise.
 
 *(Optional: users want to be excited; which features, that go beyond the original scope of the challenge, can you imagine?
 If possible, pick 1 or 2 of them and implement it as well)*
