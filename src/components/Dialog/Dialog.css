@@ -1,0 +1,48 @@
+.dialogWrapper {
+   padding: 0 !important;
+}
+
+.dialogWrapper h1 {
+  background-color: #FFCA28;
+  padding: 15px;
+  margin-top: 0;
+}
+
+.movieDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  height: 425px;
+  position: relative;
+}
+
+.movieDetails button {
+  position: absolute !important;
+  right: 10px;
+  top: 10px;
+}
+
+.description {
+  width: 400px;
+  height: 440px;
+  font-size: 16px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+
+.description dt {
+  float: left;
+  margin-right: 15px;
+}
+
+.description dd:last-child {
+  clear: both;
+  margin-left: 0;
+}
+
+.movieDetails img {
+  height: 400px;
+  margin: 15px 20px 0 0 ;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px 3px;
+}

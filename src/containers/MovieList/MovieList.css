@@ -1,0 +1,13 @@
+
+.gridList {
+  width: 800px;
+  height: auto;
+  overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px;
+  justify-content: flex-start;
+  margin-top: 85px !important;
+}
+
+.gridList > div:hover {
+  cursor: pointer;
+}
