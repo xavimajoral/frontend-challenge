@@ -4,7 +4,8 @@ const initialState = {
   loadingMovies: false,
   movies: [],
   openDialog: false,
-  movieDialog: null
+  movieDialog: null,
+  noResults: false
 };
 
 const MoviesReducer = (state = initialState, action) => {
@@ -14,7 +15,9 @@ const MoviesReducer = (state = initialState, action) => {
     case 'FETCH_MOVIES_PENDING':
       return {
         ...state,
-        loadingMovies: true
+        loadingMovies: true,
+        movies: [],
+        noResults: false
       };
     case 'FETCH_MOVIES_FULFILLED':
       return {
@@ -22,6 +25,12 @@ const MoviesReducer = (state = initialState, action) => {
         token: action.payload.data.listening_token,
         movies: state.movies.concat(action.payload.data),
         loadingMovies: false
+      };
+    case 'NO_RESULTS':
+      return {
+        ...state,
+        loadingMovies: false,
+        noResults: true
       };
     case 'FETCH_MOVIES_REJECTED':
       alert('There is an error with the API');

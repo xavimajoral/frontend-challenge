@@ -22,9 +22,6 @@ class SearchForm extends Component {
       return;
     }
     this.props.fetchMovies(param);
-    // this.setState({
-    //   value: ''
-    // });
   };
 
   handleChange = (event) => {
@@ -33,11 +30,12 @@ class SearchForm extends Component {
     });
   };
 
-  renderMovies() {
-    return false;
-  }
-
   render() {
+    const isLoading = this.props.movies.loadingMovies;
+    let loading = null;
+    if (isLoading) {
+      loading = Spinner;
+    }
 
     return (
       <form className="searchForm" onSubmit={ this.handleSubmit }>
@@ -58,7 +56,7 @@ class SearchForm extends Component {
           className="button"
           onClick={ this.handleSubmit }
         />
-        {this.props.movies.loadingMovies ? Spinner : this.renderMovies()}
+        {loading}
       </form>
     );
   }

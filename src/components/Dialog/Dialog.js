@@ -4,38 +4,20 @@ import FlatButton from 'material-ui/FlatButton';
 import notAvailable from '../../img/not_available.png';
 import Fiber from 'material-ui/svg-icons/av/fiber-manual-record';
 import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import Star from 'material-ui/svg-icons/toggle/star';
+import Favorite from 'material-ui/svg-icons/action/favorite';
+import FavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import './Dialog.css';
 
 const styles = {
-  smallIcon: {
-    width: 36,
-    height: 36,
-  },
   mediumIcon: {
     width: 48,
     height: 48,
-  },
-  largeIcon: {
-    width: 60,
-    height: 60,
-  },
-  small: {
-    width: 72,
-    height: 72,
-    padding: 16,
   },
   medium: {
     width: 96,
     height: 96,
     padding: 24,
-  },
-  large: {
-    width: 120,
-    height: 120,
-    padding: 30,
-  },
+  }
 };
 
 class DialogTemp extends Component {
@@ -70,10 +52,10 @@ class DialogTemp extends Component {
     ];
 
     if (this.state.starred) {
-      icon = <Star color="#FFCA28" />;
+      icon = <Favorite color="#D50000" />;
       tooltip = "Remove from Favorites";
     } else {
-      icon = <StarBorder color="#FFCA28" />;
+      icon = <FavoriteBorder color="#D50000" />;
       tooltip = "Add to Favorites";
     }
     let actionIcon = <IconButton
@@ -89,7 +71,6 @@ class DialogTemp extends Component {
 
     const movie = this.props.movie;
     const iconStyles = { marginRight: 10 };
-    const starStyles = { marginTop: 10 };
 
     return (
       <Dialog

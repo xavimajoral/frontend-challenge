@@ -1,9 +1,9 @@
 import axios from 'axios';
-import openSocket from 'socket.io-client';
-import { URL, URL_CLEAN } from "../constants";
+import io from 'socket.io-client';
+import { URL } from "../constants";
 
 function connectSocket(token) {
-  const socket = openSocket.connect(URL_CLEAN);
+  const socket = io.connect(URL);
   return (dispatch) => {
     socket.on('connect', () => {
       dispatch(subscribeSocket(socket, token))
@@ -14,15 +14,16 @@ function connectSocket(token) {
 function subscribeSocket(socket, token) {
   return function (dispatch) {
     socket.on(`movies.${token}`, (res) => {
-      dispatch(checkPacket(JSON.parse(res)))
+      dispatch(checkPacket(socket, JSON.parse(res)))
     });
   }
 }
 
-function checkPacket(res) {
+function checkPacket(socket, res) {
   return function (dispatch) {
     if (res.status === 'terminated') {
       dispatch({type: 'END_MOVIES_SOCKET'});
+      socket.disconnect();
     } else {
       dispatch({type: 'ADD_MOVIE_SOCKET', movie: res});
     }
@@ -30,14 +31,20 @@ function checkPacket(res) {
 }
 
 export function fetchMovies(param) {
-  const request = axios.get(`${URL}${param}`);
+  const request = axios.get(`${URL}/api/v1/movies?query=${param}`);
 
   return function (dispatch) {
     dispatch({ type: 'FETCH_MOVIES_PENDING'});
-    request.then(
-      result => dispatch({ type: 'FETCH_MOVIES_FULFILLED', payload: result})
-    ).then((result) => {
-        dispatch(connectSocket(result.payload.data.listening_token));
+    request.then((result) => {
+      if (!result.data.id) {
+        dispatch({ type: 'NO_RESULTS'});
+      } else {
+        dispatch({ type: 'FETCH_MOVIES_FULFILLED', payload: result});
+      }
+      return result;
+    })
+    .then((result) => {
+        dispatch(connectSocket(result.data.listening_token));
       }
     )
   }

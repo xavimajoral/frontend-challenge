@@ -9,10 +9,6 @@ import notAvailable from '../../img/not_available.png';
 
 class MovieList extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   openDialog = (id) => {
     const { dispatch } = this.props;
     dispatch({ type: 'OPEN_MOVIE_DETAIL', movieId: id })
@@ -20,6 +16,9 @@ class MovieList extends Component {
 
   renderMovies() {
     const { movies } = this.props.movies;
+    if (this.props.movies.noResults === true) {
+      return null;
+    }
     return (
       movies.map((movie) => {
         return (

@@ -11,3 +11,7 @@
 .gridList > div:hover {
   cursor: pointer;
 }
+
+.gridList img:hover {
+  filter: brightness(0.5);
+}
