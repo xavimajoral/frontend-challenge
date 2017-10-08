@@ -22,5 +22,6 @@
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.2"
-  }
+  },
+  "homepage" : "http://xavi.website/finleap"
 }
