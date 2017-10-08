@@ -17,8 +17,8 @@ npm start
 });
 ```
 ## Notes
-- When see the movie Details you can click to a 'heart' that simulates the action of save to favorites.
-  Just did the FE part and requires a BE to that it has full sense and can persist the data
+- When you see the movie Details you can click on a '<3' that simulates the action "save to favorites".
+  Just did the FE part and requires BE so that we can persists the data.
 - I've upload a copy of the App on:
 ```
 http://www.xavi.website/finleap/
