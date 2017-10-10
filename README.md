@@ -20,7 +20,5 @@ npm start
 - When you see the movie Details you can click on a '<3' that simulates the action "save to favorites".
   Just did the FE part and requires BE so that we can persists the data.
 - I've upload a copy of the App on:
-```
-http://www.xavi.website/finleap/
-```
+[http://www.xavi.website/finleap/](http://www.xavi.website/finleap/).
 - If you run with some issue please let me know at xavimajoral@gmail.com
