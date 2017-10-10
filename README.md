@@ -14,7 +14,6 @@ git clone https://github.com/xavimajoral/frontend-challenge.git
 cd frontend-challenge
 npm install
 npm start
-});
 ```
 ## Notes
 - When you see the movie Details you can click on a '<3' that simulates the action "save to favorites".
